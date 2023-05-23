@@ -106,6 +106,7 @@ class StoryList {
     // do it again for favorites and user stories
     user.ownStories = user.ownStories.filter(s => s.storyId !== storyId);
     user.favorites = user.favorites.filter(s => s.storyId !== storyId);
+    putStoriesOnPage();
   }
 }
 

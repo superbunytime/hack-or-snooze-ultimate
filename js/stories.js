@@ -120,6 +120,9 @@ function putUserStoriesOnPage() {
   console.debug("putUserStoriesOnPage");
 
   $ownStories.empty();
+  if (currentUser.ownStories.length == 0){
+    $ownStories.append("<h1>No stories to display</h1>")
+  }
     for (let story of currentUser.ownStories) {
       let $story = generateStoryMarkup(story, true);
       $ownStories.append($story);
@@ -134,6 +137,9 @@ function putFavsOnPage() {
   console.debug("putFavsOnPage");
 
   $favStories.empty();
+  if (currentUser.favorites.length == 0){
+    $favStories.append("<h1>No favorites to display</h1>")
+  }
     for (let story of currentUser.favorites) {
       const $story = generateStoryMarkup(story);
       $favStories.append($story);
